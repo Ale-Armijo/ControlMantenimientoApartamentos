@@ -165,3 +165,9 @@ INSERT INTO EMPLEADO (DNI, NOMBRE, CONTRASENA) VALUES ('1234', 'ALEJANDRA', '123
 INSERT INTO ALOJAMIENTO VALUES ('1', 'APARTAMENTO CORAL', 2, 'C/ AXARQUIA, 2', 3, 0);
 INSERT INTO ALOJAMIENTO VALUES ('2', 'CASA FRANCISCA', 1, 'C/ CASTILLA PÉREZ, 4', 2, 0);
 INSERT INTO ALOJAMIENTO VALUES ('3', 'APARTAMENTO ARMIJO', 2, 'C/ PINTADA, 7', 4, 0);
+
+INSERT INTO SALIDA (id, num_personas, mascotas, ninos, alojamiento_id) VALUES('1', 3, 0, 1, '1');
+INSERT INTO SALIDA (id, num_personas, mascotas, ninos, alojamiento_id) VALUES('2', 2, 1, 1, '2');
+INSERT INTO SALIDA (id, num_personas, mascotas, ninos, alojamiento_id) VALUES('3', 4, 0, 0, '3');
+
+select * from Alojamiento a, Salida s where a.nombre='APARTAMENTO CORAL' and a.id = s.alojamiento_id;
