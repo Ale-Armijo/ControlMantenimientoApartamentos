@@ -23,7 +23,6 @@ public class Ventana extends JFrame{//Frame es el marco
 		
 		this.pantallas.put("login",new PantallaLogin(this));//introduce en el mapa de Pantallas 1 registro con clave login
 		this.pantallas.put("principal",new PantallaPrincipal(this));
-		this.pantallas.put("alojamiento",new PantallaAlojamiento(this));
 		
 		this.setSize(500,400);
 		this.setLocationRelativeTo(null);
@@ -50,5 +49,17 @@ public class Ventana extends JFrame{//Frame es el marco
 		}
 		this.pantallas.get(nombrePantalla).setVisible(true);
 		this.setContentPane(this.pantallas.get(nombrePantalla));
+	}
+	
+	public void irAPantallaAlojamiento(String alojamiento) throws SQLException{
+		Iterator it=this.pantallas.values().iterator();
+		while(it.hasNext()) {
+			JPanel actual=(JPanel)it.next();
+			actual.setVisible(false);
+		}
+		PantallaAlojamiento aj = new PantallaAlojamiento(this, alojamiento);
+		this.pantallas.put("alojamiento", aj);
+		aj.setVisible(true);
+		this.setContentPane(aj);
 	}
 }

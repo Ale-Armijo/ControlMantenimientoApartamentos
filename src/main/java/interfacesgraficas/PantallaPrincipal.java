@@ -45,11 +45,15 @@ public class PantallaPrincipal extends JPanel{
 			i++;
 		}
 		
-		JList<String> lista = new JList<String>(alojamientos);
+		final JList<String> lista = new JList<String>(alojamientos);
 		lista.addMouseListener(new MouseAdapter() {
 		     public void mouseClicked(MouseEvent e) {
 		         if (e.getClickCount() == 2) {
-		        	 ventana.irAPantalla("alojamiento");
+		        	 try {
+						ventana.irAPantallaAlojamiento(lista.getSelectedValue());
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
 		          }
 		     }
 		 });
