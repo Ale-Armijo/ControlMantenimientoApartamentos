@@ -1,11 +1,12 @@
 package clases;
 
 public class Alojamiento extends ObjetoConNombre{
+	
 	private String ubicacion;
 	private byte banio;
 	private Salida ultimaSalida;
 	
-	public Alojamiento(String ubicacion, byte banio,String nombre) {
+	public Alojamiento(String ubicacion, byte banio, String nombre) {
 		super(nombre);//viene de ObjetoConNombre.
 		this.ubicacion = ubicacion;
 		this.banio = banio;
@@ -31,6 +32,11 @@ public class Alojamiento extends ObjetoConNombre{
 	}
 	public void setUltimaSalida(Salida ultimaSalida) {
 		this.ultimaSalida = ultimaSalida;
+	}
+	
+	@Override
+	public String toString() {
+		return super.getNombre() + ", "+ubicacion+", "+banio+" baños. ";
 	}
 	
 }

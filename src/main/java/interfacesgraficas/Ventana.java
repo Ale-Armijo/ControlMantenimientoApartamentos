@@ -2,6 +2,7 @@ package interfacesgraficas;
 
 import java.awt.Cursor;
 import java.awt.Image;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -17,11 +18,12 @@ public class Ventana extends JFrame{//Frame es el marco
 	protected Empleado empleadoLogueado;
 	private HashMap<String,JPanel> pantallas;
 	
-	public Ventana() {
+	public Ventana() throws SQLException {
 		this.pantallas=new HashMap<String,JPanel>();//inicializa el HashMap
 		
 		this.pantallas.put("login",new PantallaLogin(this));//introduce en el mapa de Pantallas 1 registro con clave login
 		this.pantallas.put("principal",new PantallaPrincipal(this));
+		this.pantallas.put("alojamiento",new PantallaAlojamiento(this));
 		
 		this.setSize(500,400);
 		this.setLocationRelativeTo(null);

@@ -32,6 +32,7 @@ public class PantallaLogin extends JPanel{
 	public PantallaLogin(Ventana v){
 		this.ventana=v;
 		setLayout(null);
+		this.setBackground(new Color(227,218,201));
 		
 		JButton botonLogin = new BotonAzul("Login");
 		botonLogin.addMouseListener(new MouseAdapter() {
@@ -62,7 +63,7 @@ public class PantallaLogin extends JPanel{
 		});
 		botonLogin.setToolTipText("Pincha aqu\u00ED para iniciar sesi\u00F3n");
 		
-		botonLogin.setBounds(95, 179, 160, 44);
+		botonLogin.setBounds(200, 180, 102, 33);
 		this.add(botonLogin);
 		
 		JLabel etiquetaTitulo = new JLabel("Iniciar Sesi\u00F3n");
@@ -77,7 +78,7 @@ public class PantallaLogin extends JPanel{
 		
 		JLabel labelContraseña = new JLabel("Contrase\u00F1a");
 		labelContraseña.setHorizontalAlignment(SwingConstants.CENTER);
-		labelContraseña.setBounds(95, 129, 78, 14);
+		labelContraseña.setBounds(88, 129, 78, 14);
 		add(labelContraseña);
 		
 		campoUsuario = new JTextField();
@@ -89,9 +90,6 @@ public class PantallaLogin extends JPanel{
 		campoContraseña.setEchoChar('*');
 		campoContraseña.setBounds(183, 126, 243, 20);
 		add(campoContraseña);
-		
-		JButton BotonSalir = new BotonAzul("Salir");
-		BotonSalir.setBounds(200, 251, 102, 33);
-		add(BotonSalir);
+
 	}
 }
