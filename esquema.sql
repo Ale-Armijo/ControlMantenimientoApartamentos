@@ -169,5 +169,3 @@ INSERT INTO ALOJAMIENTO VALUES ('3', 'APARTAMENTO ARMIJO', 2, 'C/ PINTADA, 7', 4
 INSERT INTO SALIDA (id, num_personas, mascotas, ninos, alojamiento_id) VALUES('1', 3, 0, 1, '1');
 INSERT INTO SALIDA (id, num_personas, mascotas, ninos, alojamiento_id) VALUES('2', 2, 1, 1, '2');
 INSERT INTO SALIDA (id, num_personas, mascotas, ninos, alojamiento_id) VALUES('3', 4, 0, 0, '3');
-
-select * from Alojamiento a, Salida s where a.nombre='APARTAMENTO CORAL' and a.id = s.alojamiento_id;
